@@ -348,23 +348,6 @@
             </objects>
             <point key="canvasLocation" x="942" y="-802"/>
         </scene>
-        <!--Display View Controller-->
-        <scene sceneID="XVJ-Wa-mR9">
-            <objects>
-                <viewController id="9mL-yv-cDS" customClass="DisplayViewController" customModule="Modified_Pokedex" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="doO-nt-Mor">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="gridView" destination="nYB-Z8-iw9" id="UqQ-Py-1mK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UzT-gC-Mts" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2830" y="-25"/>
-        </scene>
     </scenes>
     <resources>
         <image name="InputMin" width="375" height="16"/>

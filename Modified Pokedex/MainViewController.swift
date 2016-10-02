@@ -17,6 +17,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var pokemonArray: [Pokemon] = PokemonGenerator.getPokemonArray()
     
     let imageView = UIImageView(image: #imageLiteral(resourceName: "Pokedex"))
+    
+    var selectedCell: [IndexPath] = []
+    
     var fontElements: [UIColor] = [UIColor.white, UIColor.white, UIColor.white, UIColor.black, UIColor.white, UIColor.white, UIColor.white, UIColor.black, UIColor.white, UIColor.white, UIColor.black, UIColor.white, UIColor.white, UIColor.white, UIColor.white, UIColor.white, UIColor.white, UIColor.white]
     var imageElements: [UIImage] = [#imageLiteral(resourceName: "bug"), #imageLiteral(resourceName: "dark"), #imageLiteral(resourceName: "dragon"), #imageLiteral(resourceName: "electric"), #imageLiteral(resourceName: "fairy"), #imageLiteral(resourceName: "fighting"), #imageLiteral(resourceName: "fire"), #imageLiteral(resourceName: "flying"), #imageLiteral(resourceName: "ghost"), #imageLiteral(resourceName: "grass"), #imageLiteral(resourceName: "ground"), #imageLiteral(resourceName: "ice"), #imageLiteral(resourceName: "normal"), #imageLiteral(resourceName: "poison"), #imageLiteral(resourceName: "psychic"), #imageLiteral(resourceName: "rock"), #imageLiteral(resourceName: "steel"), #imageLiteral(resourceName: "water")]
     var diffElements: [String] = ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"]
@@ -47,6 +50,31 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         eachCell.element.setTitle(diffElements[indexPath.item], for: .normal)
         eachCell.element.setTitleColor(fontElements[indexPath.item], for: .normal)
         return eachCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let aCell = allTheElements.cellForItem(at: indexPath)
+        
+        selectedCell.append(indexPath)
+        displaySelected()
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+    }
+    
+    func displaySelected() {
+        for aCell in selectedCell {
+            let cell = allTheElements.cellForItem(at: aCell)
+            if cell != nil {
+                cell?.layer.borderWidth = 3
+                cell?.layer.cornerRadius = 6
+                cell?.layer.borderColor = UIColor.black.cgColor
+            }
+        }
+        allTheElements.reloadItems(at: selectedCell)
     }
     
     //Return 20 Random Pokemon array
