@@ -277,6 +277,24 @@
             </objects>
             <point key="canvasLocation" x="2039.2" y="-24.7376311844078"/>
         </scene>
+        <!--Details View Controller-->
+        <scene sceneID="fhR-fy-4Ds">
+            <objects>
+                <viewController id="yDb-z2-PvL" customClass="DetailsViewController" customModule="Modified_Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Ye-dP-0xl"/>
+                        <viewControllerLayoutGuide type="bottom" id="vsA-Pf-5Qe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lke-np-hES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QkS-1J-72m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="750"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="RWb-Td-8cp">
             <objects>

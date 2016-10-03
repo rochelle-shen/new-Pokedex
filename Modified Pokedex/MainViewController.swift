@@ -53,16 +53,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let aCell = allTheElements.cellForItem(at: indexPath)
-        
-        selectedCell.append(indexPath)
-        displaySelected()
+        //let btn = allTheElements.cellForItem(at: indexPath)
+        //selectedCell.append(indexPath)
+        print("i selected ")
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
+        let aCell = cell as! ElementsCollectionViewCell
+        if selectedCell.contains(indexPath) {
+            aCell.layer.borderWidth = 3
+            aCell.layer.cornerRadius = 6
+            aCell.layer.borderColor = UIColor.black.cgColor
+        }
+        //displaySelected()
     }
     
     func displaySelected() {
@@ -76,6 +81,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         allTheElements.reloadItems(at: selectedCell)
     }
+    
+    
     
     //Return 20 Random Pokemon array
     func giveRandomPokemon() -> [Pokemon] {
